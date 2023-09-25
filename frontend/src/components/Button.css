@@ -1,12 +1,14 @@
 .button {
-    background: red;
+    background: rgb(172,156,156);
+    background: linear-gradient(0deg, rgba(172,156,156,1) 6%, rgba(175,175,162,1) 53%);
     width: 25%;
     height: 20%;
     display: flex;
     box-sizing: border-box;
     justify-content: center;
     align-items: center;
-    border: 1px solid rgba(0, 0, 0, 0.05);
+    border: 1px solid rgb(179, 142, 142);
+    color: white;
 }
 
 .button[data-size="2"] {
