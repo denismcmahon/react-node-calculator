@@ -2,7 +2,7 @@ import { useState } from 'react';
 import './App.css';
 import Button from './components/Button';
 import Display from './components/Display';
-import { evaluate, round } from 'mathjs'
+import { evaluate, round } from 'mathjs';
 
 function App() {
 
