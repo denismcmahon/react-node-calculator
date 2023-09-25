@@ -1,10 +1,12 @@
 import './Button.css';
 
-function Button({ label, size }) {
+function Button({ onClick, label, size }) {
     return (
         <div 
+            onClick={onClick}
             className='button'
             data-size={size}
+            data-label={label}
         >
             {label}
         </div>
