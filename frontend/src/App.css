@@ -1,0 +1,17 @@
+.App {
+  height: 400px;
+  width: 300px;
+}
+
+.display {
+  display: flex;
+  height: 20%;
+  background: green;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  height: 80%;
+}

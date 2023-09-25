@@ -1,0 +1,14 @@
+.button {
+    background: red;
+    width: 25%;
+    height: 20%;
+    display: flex;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.button[data-size="2"] {
+    height: 40%;
+}
