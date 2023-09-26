@@ -11,7 +11,7 @@ const Calculation = require('./models/calculation');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(cors());
-app.use(express.static(path.join(__dirname, "../frontend/build")));
+app.use(express.static(path.join(__dirname, "./client/build")));
 
 const mongoString = process.env.DATABASE_URL;
 mongoose.connect(mongoString);
