@@ -21,11 +21,17 @@ function App() {
     }
   }
 
-  function performCalculation() {
-    let result = operations.join('');
-    result = evaluate(result);
-    result = round(result, 14);
-    let resultArray = [result]
+  async function performCalculation() {
+    let operationsString = operations.join('');
+    const requestOptions = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ calculation: operationsString })
+    };
+
+    const response = await fetch('http://localhost:3000/calculate', requestOptions);
+    const calculationData = await response.json();
+    let resultArray = [calculationData.result];
     setOperations(resultArray);
   }
 

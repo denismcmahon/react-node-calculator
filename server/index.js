@@ -1,24 +1,28 @@
 const express = require("express");
 const bodyParser = require('body-parser');
+const cors = require('cors');
 const app = express();
 const math = require('mathjs');
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(cors());
 
-app.get('/calculate', (req, res) => {
+app.post('/calculate', (req, res) => {
     try {
         const { calculation } = req.body;
         let calcResult = math.evaluate(calculation);
         calcResult = math.round(calcResult, 14);
-        res.send({ 
-            status: 'successful',
-            result: calcResult
+        console.log('DM ==> /calculate ==> calcResult: ');
+        console.log(calcResult);
+        res.status(200).json({
+            status : 'success',
+            result : calcResult
         });
     } catch(err) {
-        res.send({ 
-            status: 'failed',
-            error: err.message
+        res.status(400).json({
+            status : 'failed',
+            error : err.message
         });
     }
 });
