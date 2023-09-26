@@ -3,15 +3,6 @@
   width: 350px;
 }
 
-.display {
-  display: flex;
-  height: 20%;
-  background: rgb(172,156,156);
-  background: linear-gradient(0deg, rgba(172,156,156,1) 6%, rgba(175,175,162,1) 53%);
-  border: 1px solid rgb(179, 142, 142);
-  box-sizing: border-box;
-}
-
 .buttons {
   display: flex;
   flex-wrap: wrap;
