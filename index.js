@@ -11,7 +11,7 @@ const Calculation = require('./models/calculation');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(cors());
-app.use(express.static(path.join(__dirname, "./client/build")));
+app.use(express.static(path.join(__dirname, "build")));
 
 const mongoString = process.env.DATABASE_URL;
 mongoose.connect(mongoString);
@@ -26,7 +26,7 @@ database.once('connected', () => {
 
 app.get("*", (req, res) => {
     res.sendFile(
-        path.join(__dirname, "../frontend/build/index.html")
+        path.join(__dirname, "./client/build/index.html")
     );
 });
 
