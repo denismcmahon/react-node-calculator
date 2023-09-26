@@ -5,22 +5,30 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const app = express();
 const math = require('mathjs');
+const path = require("path");
 const Calculation = require('./models/calculation');
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(cors());
+app.use(express.static(path.join(__dirname, "../frontend/build")));
 
 const mongoString = process.env.DATABASE_URL;
 mongoose.connect(mongoString);
 const database = mongoose.connection;
 database.on('error', (error) => {
     console.log(error)
-})
+});
 
 database.once('connected', () => {
     console.log('Database Connected');
-})
+});
+
+app.get("*", (req, res) => {
+    res.sendFile(
+        path.join(__dirname, "../frontend/build/index.html")
+    );
+});
 
 app.post('/calculate', (req, res) => {
     try {

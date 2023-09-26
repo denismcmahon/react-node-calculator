@@ -29,7 +29,7 @@ function App() {
       body: JSON.stringify({ calculation: operationsString })
     };
 
-    const response = await fetch('http://localhost:3000/calculate', requestOptions);
+    const response = await fetch('/calculate', requestOptions);
     const calculationData = await response.json();
     let resultArray = [calculationData.result];
     setOperations(resultArray);
