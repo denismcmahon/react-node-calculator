@@ -75,7 +75,7 @@ function App() {
         <Button onClick={buttonClick} label='X' />
         <Button onClick={buttonClick} label='9' />
         <Button onClick={buttonClick} label='6' />
-        <Button onClick={buttonClick} label='3D' />
+        <Button onClick={buttonClick} label='3' />
         <Button onClick={buttonClick} label='' />
         <Button onClick={buttonClick} label='-' />
         <Button onClick={buttonClick} label='+' size='2' />
